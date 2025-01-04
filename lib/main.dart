@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:quick_care/common/screens/onboard_screens.dart';
-import 'package:quick_care/common/screens/splash_screen.dart';
+import 'package:quick_care/features/auth/presentation/screens/signin_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true,
       ),
-      home: OnboardScreens(),
+      home: SigninScreen(),
     );
   }
 }
