@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:quick_care/common/widgets/button_widgfet.dart';
 import 'package:quick_care/common/widgets/custom_textfield.dart';
+import 'package:quick_care/features/auth/presentation/screens/signin_screen.dart';
 import 'package:quick_care/features/auth/presentation/widgets/custom_rich_text.dart';
 import 'package:quick_care/features/auth/presentation/widgets/header.dart';
 import 'package:quick_care/features/auth/presentation/widgets/social_login_button.dart';
@@ -59,6 +60,11 @@ class SignupScreen extends StatelessWidget {
                 CustomRichText(
                   text: 'Do you have an account? ',
                   richText: "Sign in",
+                  onTap: () => Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => SigninScreen(),
+                    ),
+                  ),
                 )
               ],
             )

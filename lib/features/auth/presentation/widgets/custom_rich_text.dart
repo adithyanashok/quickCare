@@ -4,10 +4,12 @@ import 'package:flutter/material.dart';
 class CustomRichText extends StatelessWidget {
   final String text;
   final String richText;
+  final VoidCallback onTap;
   const CustomRichText({
     super.key,
     required this.text,
     required this.richText,
+    required this.onTap,
   });
 
   @override
@@ -23,7 +25,7 @@ class CustomRichText extends StatelessWidget {
               fontWeight: FontWeight.w500,
               color: const Color.fromARGB(255, 1, 31, 129),
             ),
-            recognizer: TapGestureRecognizer()..onTap = () {},
+            recognizer: TapGestureRecognizer()..onTap = () => onTap(),
           ),
         ],
       ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:quick_care/common/styles/styles.dart';
 import 'package:quick_care/common/widgets/button_widgfet.dart';
+import 'package:quick_care/features/auth/presentation/screens/signup_screen.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class OnboardScreens extends StatefulWidget {
@@ -25,17 +26,17 @@ class _OnboardScreensState extends State<OnboardScreens> {
         controller: controller,
         children: [
           _page(
-            "doc1.jpg",
+            "assets/images/doc1.jpg",
             "Thousands of online specialists",
             "Explore a Vast Array of Online Medical Specialists,Offering an Extensive Range of Expertise Tailored to Your Healthcare Needs.",
           ),
           _page(
-            "doc3.jpg",
+            "assets/images/doc3.jpg",
             "Connect With specialists",
             "Connect with Specialized Doctors Online for Convenient and Comprehensive Medical Consultations.",
           ),
           _page(
-            "doc4.jpg",
+            "assets/images/doc4.jpg",
             "Meet Doctors Online",
             "Connect with Specialized Doctors Online for Convenient and Comprehensive Medical Consultations.",
           ),
@@ -51,7 +52,7 @@ class _OnboardScreensState extends State<OnboardScreens> {
           width: double.infinity,
           height: MediaQuery.of(context).size.height * 0.7,
           child: Image.asset(
-            'assets/images/$imgName',
+            imgName,
             fit: BoxFit.cover,
           ),
         ),
@@ -92,7 +93,12 @@ class _OnboardScreensState extends State<OnboardScreens> {
                     name: "Next",
                     onTap: () {
                       if (controller.page?.toInt() == 2) {
-                        // Handle end of onboarding logic
+                        Navigator.of(context).pushAndRemoveUntil(
+                          MaterialPageRoute(
+                            builder: (context) => SignupScreen(),
+                          ),
+                          (route) => false,
+                        );
                       } else {
                         controller.nextPage(
                           duration: Duration(milliseconds: 300),
@@ -120,13 +126,21 @@ class _OnboardScreensState extends State<OnboardScreens> {
                 ),
                 Padding(
                   padding: const EdgeInsets.only(top: 15.0),
-                  child: Text(
-                    "Skip",
-                    style: TextStyle(
-                      color: Color(0xFF374151),
-                      fontSize: 14,
-                      fontWeight: FontWeight.w400,
-                      fontFamily: 'Inter',
+                  child: GestureDetector(
+                    onTap: () => Navigator.of(context).pushAndRemoveUntil(
+                      MaterialPageRoute(
+                        builder: (context) => SignupScreen(),
+                      ),
+                      (route) => false,
+                    ),
+                    child: Text(
+                      "Skip",
+                      style: TextStyle(
+                        color: Color(0xFF374151),
+                        fontSize: 14,
+                        fontWeight: FontWeight.w400,
+                        fontFamily: 'Inter',
+                      ),
                     ),
                   ),
                 ),
