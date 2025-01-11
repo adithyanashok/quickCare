@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:quick_care/common/screens/splash_screen.dart';
+import 'package:quick_care/common/screens/home_screens.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true,
       ),
-      home: SplashScreen(),
+      home: HomeScreens(),
     );
   }
 }

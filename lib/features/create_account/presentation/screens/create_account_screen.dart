@@ -19,52 +19,54 @@ class CreateAccountScreen extends StatelessWidget {
           style: AppTextStyle.titleStyle,
         ),
       ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        spacing: 10,
-        children: [
-          SizedBox(height: 15),
-          Stack(
-            children: [
-              CircleAvatar(
-                radius: 60,
-                backgroundColor: Color(0xFFF3F4F6),
-                child: Icon(
-                  Icons.person,
-                  size: 120,
-                  color: Colors.grey[350],
-                ),
-              ),
-              Positioned(
-                right: 5,
-                bottom: 10,
-                child: Icon(
-                  Icons.add_a_photo,
-                  color: Colors.grey[700],
-                ),
-              ),
-            ],
-          ),
-          Padding(
-            padding: const EdgeInsets.all(23.0),
-            child: Column(
-              spacing: 14,
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          spacing: 10,
+          children: [
+            SizedBox(height: 15),
+            Stack(
               children: [
-                CustomTextField(
-                  name: "Your Name",
-                  icon: Icons.person_outline,
+                CircleAvatar(
+                  radius: 60,
+                  backgroundColor: Color(0xFFF3F4F6),
+                  child: Icon(
+                    Icons.person,
+                    size: 120,
+                    color: Colors.grey[350],
+                  ),
                 ),
-                CustomTextField(
-                  name: "Date of birth",
-                  icon: Icons.calendar_month,
+                Positioned(
+                  right: 5,
+                  bottom: 10,
+                  child: Icon(
+                    Icons.add_a_photo,
+                    color: Colors.grey[700],
+                  ),
                 ),
-                GenderDropdown(hintText: "Gender", onChanged: (value) {}),
-                SizedBox(height: 1),
-                CustomRoundedButton(onTap: () {}, name: "Save")
               ],
             ),
-          )
-        ],
+            Padding(
+              padding: const EdgeInsets.all(23.0),
+              child: Column(
+                spacing: 14,
+                children: [
+                  CustomTextField(
+                    name: "Your Name",
+                    icon: Icons.person_outline,
+                  ),
+                  CustomTextField(
+                    name: "Date of birth",
+                    icon: Icons.calendar_month,
+                  ),
+                  GenderDropdown(hintText: "Gender", onChanged: (value) {}),
+                  SizedBox(height: 1),
+                  CustomRoundedButton(onTap: () {}, name: "Save")
+                ],
+              ),
+            )
+          ],
+        ),
       ),
     );
   }

@@ -13,62 +13,65 @@ class SignupScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Column(
-          spacing: 20,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Header(
-              message: "Create Account",
-            ),
-            Padding(
-              padding: const EdgeInsets.all(30.0),
-              child: Column(
-                spacing: 14,
-                children: [
-                  CustomTextField(
-                    name: "Your Name",
-                    icon: Icons.person_outline_rounded,
-                  ),
-                  CustomTextField(
-                    name: "Your Email",
-                    icon: Icons.mail_outline_outlined,
-                  ),
-                  CustomTextField(
-                    name: "Password",
-                    icon: Icons.lock_outlined,
-                  ),
-                  SizedBox(height: 1),
-                  CustomRoundedButton(
-                    onTap: () {},
-                    name: "Create account",
-                  )
-                ],
+        child: SingleChildScrollView(
+          child: Column(
+            spacing: 20,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              SizedBox(height: 10),
+              Header(
+                message: "Create Account",
               ),
-            ),
-            Column(
-              children: [
-                Row(
-                  spacing: 10,
+              Padding(
+                padding: const EdgeInsets.all(30.0),
+                child: Column(
+                  spacing: 14,
                   children: [
-                    Expanded(child: Divider()),
-                    Text("Or"),
-                    Expanded(child: Divider()),
+                    CustomTextField(
+                      name: "Your Name",
+                      icon: Icons.person_outline_rounded,
+                    ),
+                    CustomTextField(
+                      name: "Your Email",
+                      icon: Icons.mail_outline_outlined,
+                    ),
+                    CustomTextField(
+                      name: "Password",
+                      icon: Icons.lock_outlined,
+                    ),
+                    SizedBox(height: 1),
+                    CustomRoundedButton(
+                      onTap: () {},
+                      name: "Create account",
+                    )
                   ],
                 ),
-                SocialLogin(),
-                CustomRichText(
-                  text: 'Do you have an account? ',
-                  richText: "Sign in",
-                  onTap: () => Navigator.of(context).push(
-                    MaterialPageRoute(
-                      builder: (context) => SigninScreen(),
-                    ),
+              ),
+              Column(
+                children: [
+                  Row(
+                    spacing: 10,
+                    children: [
+                      Expanded(child: Divider()),
+                      Text("Or"),
+                      Expanded(child: Divider()),
+                    ],
                   ),
-                )
-              ],
-            )
-          ],
+                  SocialLogin(),
+                  CustomRichText(
+                    text: 'Do you have an account? ',
+                    richText: "Sign in",
+                    onTap: () => Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => SigninScreen(),
+                      ),
+                    ),
+                  )
+                ],
+              )
+            ],
+          ),
         ),
       ),
     );
