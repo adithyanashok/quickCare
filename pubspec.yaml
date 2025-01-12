@@ -33,6 +33,7 @@ dependencies:
   flutter:
     sdk: flutter
   hexcolor: ^3.0.1
+  hugeicons: ^0.0.7
   smooth_page_indicator: ^1.2.0+3
 
 dev_dependencies:

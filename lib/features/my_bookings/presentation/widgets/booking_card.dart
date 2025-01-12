@@ -82,23 +82,21 @@ class BookingCard extends StatelessWidget {
               ],
             ),
             Divider(),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            Column(
+              spacing: 10,
               children: [
                 CustomRoundedButton(
                   onTap: () {},
-                  name: "Cancel",
-                  width: 155,
+                  name: "Reschedule",
                   height: 44,
-                  textColor: AppColors.midblue,
-                  buttonColor: AppColors.grey200,
                   fontWeight: FontWeight.bold,
                 ),
                 CustomRoundedButton(
                   onTap: () {},
-                  name: "Reschedule",
-                  width: 155,
+                  name: "Cancel",
                   height: 44,
+                  textColor: AppColors.midblue,
+                  buttonColor: AppColors.grey200,
                   fontWeight: FontWeight.bold,
                 ),
               ],

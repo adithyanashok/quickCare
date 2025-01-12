@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quick_care/common/screens/home_screen/home_screens.dart';
 import 'package:quick_care/common/widgets/button_widgfet.dart';
 import 'package:quick_care/common/widgets/custom_textfield.dart';
 import 'package:quick_care/features/auth/presentation/screens/signin_screen.dart';
@@ -42,7 +43,13 @@ class SignupScreen extends StatelessWidget {
                     ),
                     SizedBox(height: 1),
                     CustomRoundedButton(
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) => HomeScreens(),
+                          ),
+                        );
+                      },
                       name: "Create account",
                     )
                   ],

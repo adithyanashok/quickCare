@@ -36,7 +36,7 @@ class CustomRoundedButton extends StatelessWidget {
             name,
             style: TextStyle(
               color: textColor,
-              fontSize: 16,
+              fontSize: 14,
               fontWeight: fontWeight,
               fontFamily: "Inter",
             ),

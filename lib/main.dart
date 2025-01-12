@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:quick_care/features/my_bookings/presentation/screens/my_bookings.dart';
+import 'package:quick_care/common/screens/bottom_nav.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true,
       ),
-      home: MyBookings(),
+      home: BottomNav(),
     );
   }
 }
