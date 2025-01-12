@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:quick_care/core/colors.dart';
 
 class AppTextStyle {
-  static const TextStyle titleStyle = TextStyle(
-    color: Color(0xFF1C2A3A),
+  static TextStyle titleStyle = TextStyle(
+    color: AppColors.midblue,
     fontSize: 20,
-    fontWeight: FontWeight.w900,
-    fontFamily: 'Inter',
+    fontWeight: FontWeight.bold,
+    // fontFamily: 'Inter',
   );
 
   static const TextStyle descriptionStyle = TextStyle(
