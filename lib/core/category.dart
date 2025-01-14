@@ -18,3 +18,15 @@ List<CategoryModel> categories = [
   CategoryModel(image: "assets/images/lab.png", category: "Laboratory"),
   CategoryModel(image: "assets/images/vac.png", category: "Vaccination"),
 ];
+
+List<CategoryModel> category = [
+  CategoryModel(image: "", category: "All"),
+  CategoryModel(image: "", category: "Dentistry"),
+  CategoryModel(image: "", category: "Cardiology"),
+  CategoryModel(image: "neuro.png", category: "Neurology"),
+  CategoryModel(image: "", category: "Gastroenterologist"),
+  CategoryModel(image: "", category: "General"),
+  CategoryModel(image: "", category: "Pulmonologist"),
+  CategoryModel(image: "", category: "Laboratory"),
+  CategoryModel(image: "", category: "Vaccination"),
+];
