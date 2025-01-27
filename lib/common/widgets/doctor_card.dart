@@ -100,8 +100,10 @@ class DoctorCard extends StatelessWidget {
 }
 
 class DocCardHorizontal extends StatelessWidget {
+  final bool? showFavandRatings;
   const DocCardHorizontal({
     super.key,
+    this.showFavandRatings = true,
   });
 
   @override
@@ -139,10 +141,12 @@ class DocCardHorizontal extends StatelessWidget {
                         "Dr. John Doe",
                         style: AppTextStyle.titleStyle.copyWith(fontSize: 18),
                       ),
-                      Icon(
-                        HugeIcons.strokeRoundedFavourite,
-                        color: AppColors.grey400,
-                      ),
+                      showFavandRatings == true
+                          ? Icon(
+                              HugeIcons.strokeRoundedFavourite,
+                              color: AppColors.grey400,
+                            )
+                          : SizedBox()
                     ],
                   ),
                   Divider(
@@ -177,41 +181,44 @@ class DocCardHorizontal extends StatelessWidget {
                     ],
                   ),
                   SizedBox(height: 2),
-                  SizedBox(
-                    child: Row(
-                      spacing: 8,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Row(
-                          children: [
-                            Icon(
-                              Icons.star_rounded,
-                              color: Colors.yellow,
-                              size: 25,
-                            ),
-                            Text(
-                              "5",
-                              style: AppTextStyle.descriptionStyle.copyWith(
-                                fontSize: 12,
+                  showFavandRatings == true
+                      ? SizedBox(
+                          child: Row(
+                            spacing: 8,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              Row(
+                                children: [
+                                  Icon(
+                                    Icons.star_rounded,
+                                    color: Colors.yellow,
+                                    size: 25,
+                                  ),
+                                  Text(
+                                    "5",
+                                    style:
+                                        AppTextStyle.descriptionStyle.copyWith(
+                                      fontSize: 12,
+                                    ),
+                                  ),
+                                ],
                               ),
-                            ),
-                          ],
-                        ),
-                        Container(
-                          color: AppColors.grey300,
-                          width: 1.5,
-                          height: 12,
-                        ),
-                        Text(
-                          "1,454 reviews",
-                          style: AppTextStyle.descriptionStyle.copyWith(
-                            fontSize: 12,
+                              Container(
+                                color: AppColors.grey300,
+                                width: 1.5,
+                                height: 12,
+                              ),
+                              Text(
+                                "1,454 reviews",
+                                style: AppTextStyle.descriptionStyle.copyWith(
+                                  fontSize: 12,
+                                ),
+                              )
+                            ],
                           ),
                         )
-                      ],
-                    ),
-                  ),
+                      : SizedBox(),
                 ],
               ),
             ),
