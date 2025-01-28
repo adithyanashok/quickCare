@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:quick_care/features/doctor_details/presentation/doctor_details_screen.dart';
-import 'package:quick_care/features/search/presentation/search_screen.dart';
 
 void main() {
   runApp(const MyApp());
