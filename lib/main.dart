@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quick_care/features/appointment/presentation/appointment_screen.dart';
 import 'package:quick_care/features/doctor_details/presentation/doctor_details_screen.dart';
 
 void main() {
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true,
       ),
-      home: DoctorDetailsScreen(),
+      home: AppointmentScreen(),
     );
   }
 }
