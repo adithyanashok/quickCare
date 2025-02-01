@@ -93,23 +93,9 @@ class DoctorDetailsScreen extends StatelessWidget {
               ],
             ),
           ),
-          Card(
-            surfaceTintColor: AppColors.grey200,
-            margin: EdgeInsets.all(0),
-            shape:
-                BeveledRectangleBorder(borderRadius: BorderRadius.circular(0)),
-            child: Container(
-              width: double.infinity,
-              padding: EdgeInsets.symmetric(horizontal: 20),
-              height: 100,
-              child: Center(
-                child: CustomRoundedButton(
-                  onTap: () {},
-                  name: "Book Appointment",
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ),
+          BottomButton(
+            name: "Book Appointment",
+            onTap: () {},
           ),
         ],
       ),

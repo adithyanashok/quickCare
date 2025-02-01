@@ -46,3 +46,34 @@ class CustomRoundedButton extends StatelessWidget {
     );
   }
 }
+
+class BottomButton extends StatelessWidget {
+  final String name;
+  final VoidCallback onTap;
+  const BottomButton({
+    super.key,
+    required this.name,
+    required this.onTap,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      surfaceTintColor: AppColors.grey200,
+      margin: EdgeInsets.all(0),
+      shape: BeveledRectangleBorder(borderRadius: BorderRadius.circular(0)),
+      child: Container(
+        width: double.infinity,
+        padding: EdgeInsets.symmetric(horizontal: 20),
+        height: 100,
+        child: Center(
+          child: CustomRoundedButton(
+            onTap: onTap,
+            name: name,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ),
+    );
+  }
+}
