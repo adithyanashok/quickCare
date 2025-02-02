@@ -13,7 +13,7 @@ class CustomRoundedButton extends StatelessWidget {
     super.key,
     required this.onTap,
     required this.name,
-    this.width = double.infinity,
+    this.width,
     this.height = 50,
     this.textColor = Colors.white,
     this.buttonColor = AppColors.midblue,

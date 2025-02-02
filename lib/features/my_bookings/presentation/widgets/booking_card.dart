@@ -4,8 +4,10 @@ import 'package:quick_care/common/widgets/button_widgfet.dart';
 import 'package:quick_care/core/colors.dart';
 
 class BookingCard extends StatelessWidget {
+  final bool isDoc;
   const BookingCard({
     super.key,
+    this.isDoc = false,
   });
 
   @override
@@ -37,7 +39,7 @@ class BookingCard extends StatelessWidget {
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(10),
                     child: Image.asset(
-                      "assets/images/doc1.png",
+                      "assets/images/${isDoc == false ? "doc1.png" : "portrait.jpg"}",
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -52,14 +54,16 @@ class BookingCard extends StatelessWidget {
                         fontSize: 18,
                       ),
                     ),
-                    Text(
-                      "Dentist",
-                      style: AppTextStyle.titleStyle.copyWith(
-                        fontSize: 14,
-                        color: AppColors.grey600,
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
+                    isDoc == false
+                        ? Text(
+                            "Dentist",
+                            style: AppTextStyle.titleStyle.copyWith(
+                              fontSize: 14,
+                              color: AppColors.grey600,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          )
+                        : SizedBox(),
                     Row(
                       children: [
                         Icon(
@@ -82,25 +86,49 @@ class BookingCard extends StatelessWidget {
               ],
             ),
             Divider(),
-            Column(
-              spacing: 10,
-              children: [
-                CustomRoundedButton(
-                  onTap: () {},
-                  name: "Reschedule",
-                  height: 44,
-                  fontWeight: FontWeight.bold,
-                ),
-                CustomRoundedButton(
-                  onTap: () {},
-                  name: "Cancel",
-                  height: 44,
-                  textColor: AppColors.midblue,
-                  buttonColor: AppColors.grey200,
-                  fontWeight: FontWeight.bold,
-                ),
-              ],
-            ),
+            isDoc == false
+                ? Column(
+                    spacing: 10,
+                    children: [
+                      CustomRoundedButton(
+                        onTap: () {},
+                        name: "Reschedule",
+                        height: 44,
+                        fontWeight: FontWeight.bold,
+                      ),
+                      CustomRoundedButton(
+                        onTap: () {},
+                        name: "Cancel",
+                        height: 44,
+                        textColor: AppColors.midblue,
+                        buttonColor: AppColors.grey200,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ],
+                  )
+                : Row(
+                    spacing: 10,
+                    children: [
+                      Expanded(
+                        child: CustomRoundedButton(
+                          onTap: () {},
+                          name: "Completed",
+                          height: 44,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      Expanded(
+                        child: CustomRoundedButton(
+                          onTap: () {},
+                          name: "Cancelled",
+                          height: 44,
+                          textColor: Colors.white,
+                          buttonColor: Colors.red,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
+                  ),
           ],
         ),
       ),

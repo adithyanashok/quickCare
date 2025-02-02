@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:quick_care/common/widgets/doctor_card.dart';
-import 'package:quick_care/common/widgets/section_title.dart';
 
 class TopRatedDoctors extends StatelessWidget {
   const TopRatedDoctors({super.key});
@@ -9,10 +8,6 @@ class TopRatedDoctors extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        SectionTitle(
-          title: "Top Rated Doctors",
-          subtitle: "see all",
-        ),
         SizedBox(
           height: 320,
           child: ListView.separated(

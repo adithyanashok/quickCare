@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:quick_care/common/screens/home_screen/home_screens.dart';
 import 'package:quick_care/common/widgets/button_widgfet.dart';
 import 'package:quick_care/common/widgets/custom_textfield.dart';
 import 'package:quick_care/features/auth/presentation/screens/signin_screen.dart';
 import 'package:quick_care/features/auth/presentation/widgets/custom_rich_text.dart';
 import 'package:quick_care/features/auth/presentation/widgets/header.dart';
 import 'package:quick_care/features/auth/presentation/widgets/social_login_button.dart';
+import 'package:quick_care/features/create_account/presentation/screens/create_account_screen.dart';
 
 class SignupScreen extends StatelessWidget {
   const SignupScreen({super.key});
@@ -46,7 +46,7 @@ class SignupScreen extends StatelessWidget {
                       onTap: () {
                         Navigator.of(context).push(
                           MaterialPageRoute(
-                            builder: (context) => HomeScreens(),
+                            builder: (context) => CreateAccountScreen(),
                           ),
                         );
                       },
@@ -74,7 +74,7 @@ class SignupScreen extends StatelessWidget {
                         builder: (context) => SigninScreen(),
                       ),
                     ),
-                  )
+                  ),
                 ],
               )
             ],

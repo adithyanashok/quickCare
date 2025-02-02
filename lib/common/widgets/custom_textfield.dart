@@ -51,35 +51,37 @@ class CustomTextField extends StatelessWidget {
 class GenderDropdown extends StatelessWidget {
   final String hintText;
   final ValueChanged<String?> onChanged;
+  final List<String> items;
 
   const GenderDropdown({
     super.key,
     required this.hintText,
     required this.onChanged,
+    required this.items,
   });
 
   @override
   Widget build(BuildContext context) {
     return DropdownButtonFormField<String>(
       decoration: InputDecoration(
-        fillColor: const Color.fromARGB(255, 255, 255, 255),
+        fillColor: AppColors.grey200,
         filled: true,
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8),
           borderSide: const BorderSide(
-            color: Colors.grey,
+            color: Colors.transparent,
           ),
         ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8),
           borderSide: const BorderSide(
-            color: Colors.grey,
+            color: Colors.transparent,
           ),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8),
           borderSide: const BorderSide(
-            color: Colors.grey,
+            color: Colors.transparent,
           ),
         ),
       ),
@@ -89,7 +91,7 @@ class GenderDropdown extends StatelessWidget {
           color: Colors.grey,
         ),
       ),
-      items: ["Male", "Female", "Other"].map((String value) {
+      items: items.map((String value) {
         return DropdownMenuItem<String>(
           value: value,
           child: Text(value),

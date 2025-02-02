@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:quick_care/common/widgets/category_card.dart';
-import 'package:quick_care/common/widgets/section_title.dart';
 import 'package:quick_care/core/category.dart';
 
 class CategorySection extends StatelessWidget {
@@ -10,10 +9,6 @@ class CategorySection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        SectionTitle(
-          title: "Categories",
-          subtitle: "see all",
-        ),
         SizedBox(
           height: 230,
           child: GridView.builder(

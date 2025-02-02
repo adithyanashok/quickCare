@@ -15,7 +15,7 @@ class TabAppBar extends StatelessWidget {
     return AppBar(
       centerTitle: true,
       title: Text(
-        'My Bookings',
+        'Appointments',
         style: AppTextStyle.titleStyle,
       ),
       bottom: TabBar(

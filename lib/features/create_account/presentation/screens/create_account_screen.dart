@@ -11,7 +11,7 @@ class CreateAccountScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          onPressed: () {},
+          onPressed: () => Navigator.of(context).pop(),
           icon: Icon(Icons.arrow_back_ios_new_rounded),
         ),
         title: Text(
@@ -59,9 +59,18 @@ class CreateAccountScreen extends StatelessWidget {
                     name: "Date of birth",
                     icon: Icons.calendar_month,
                   ),
-                  GenderDropdown(hintText: "Gender", onChanged: (value) {}),
+                  GenderDropdown(
+                    hintText: "Gender",
+                    onChanged: (value) {},
+                    items: ["Male", "Female", "Other"],
+                  ),
+                  GenderDropdown(
+                    hintText: "Select role",
+                    onChanged: (value) {},
+                    items: ["Doctor", "Patient"],
+                  ),
                   SizedBox(height: 1),
-                  CustomRoundedButton(onTap: () {}, name: "Save")
+                  CustomRoundedButton(onTap: () {}, name: "Create account"),
                 ],
               ),
             )
