@@ -59,6 +59,10 @@ class CreateAccountScreen extends StatelessWidget {
                     name: "Date of birth",
                     icon: Icons.calendar_month,
                   ),
+                  CustomTextField(
+                    name: "Phone",
+                    icon: Icons.phone,
+                  ),
                   GenderDropdown(
                     hintText: "Gender",
                     onChanged: (value) {},

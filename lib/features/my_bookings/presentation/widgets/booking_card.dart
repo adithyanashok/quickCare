@@ -120,7 +120,7 @@ class BookingCard extends StatelessWidget {
                       Expanded(
                         child: CustomRoundedButton(
                           onTap: () {},
-                          name: "Cancelled",
+                          name: "Cancel",
                           height: 44,
                           textColor: Colors.white,
                           buttonColor: Colors.red,
