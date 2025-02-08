@@ -59,7 +59,8 @@ class BottomButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      surfaceTintColor: AppColors.grey200,
+      color: Colors.white,
+      elevation: 0,
       margin: EdgeInsets.all(0),
       shape: BeveledRectangleBorder(borderRadius: BorderRadius.circular(0)),
       child: Container(

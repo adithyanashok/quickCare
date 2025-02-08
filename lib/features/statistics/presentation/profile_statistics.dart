@@ -6,30 +6,33 @@ class ProfileStatistics extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
-      children: [
-        StatisticsCard(
-          label: "PATIENTS",
-          value: "160",
-          icon: Icons.groups_rounded,
-          color: Colors.blue,
-          size: 30,
-        ),
-        StatisticsCard(
-          label: "APPOINTMENTS",
-          value: "200",
-          icon: Icons.medical_services_rounded,
-          color: Colors.green,
-        ),
-        StatisticsCard(
-          label: "REVANUE",
-          value: "\$10K",
-          icon: Icons.attach_money,
-          color: Colors.red,
-          size: 26,
-        ),
-      ],
+    return SizedBox(
+      height: 140,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          StatisticsCard(
+            label: "PATIENTS",
+            value: "160",
+            icon: Icons.groups_rounded,
+            color: Colors.blue,
+            size: 30,
+          ),
+          StatisticsCard(
+            label: "APPOINTMENTS",
+            value: "200",
+            icon: Icons.medical_services_rounded,
+            color: Colors.green,
+          ),
+          StatisticsCard(
+            label: "REVANUE",
+            value: "\$10K",
+            icon: Icons.attach_money,
+            color: Colors.red,
+            size: 24,
+          ),
+        ],
+      ),
     );
   }
 }
@@ -61,7 +64,7 @@ class StatisticsCard extends StatelessWidget {
           spacing: 8,
           children: [
             CircleAvatar(
-              radius: 24,
+              radius: 22,
               backgroundColor: color.withOpacity(0.3),
               child: Icon(
                 icon,

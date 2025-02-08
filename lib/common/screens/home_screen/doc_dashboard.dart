@@ -3,8 +3,8 @@ import 'package:quick_care/common/styles/styles.dart';
 import 'package:quick_care/features/appointment/presentation/widgets/latest_appointments.dart';
 import 'package:quick_care/features/statistics/presentation/profile_statistics.dart';
 
-class DoctorHomeScreen extends StatelessWidget {
-  const DoctorHomeScreen({super.key});
+class DocDashboard extends StatelessWidget {
+  const DocDashboard({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -25,12 +25,12 @@ class DoctorHomeScreen extends StatelessWidget {
       //   ),
       // ),
       body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 24),
-          child: Column(
-            spacing: 20,
-            children: [
-              Row(
+        child: ListView(
+          children: [
+            Padding(
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 15.0, vertical: 24),
+              child: Row(
                 spacing: 10,
                 children: [
                   CircleAvatar(
@@ -52,30 +52,33 @@ class DoctorHomeScreen extends StatelessWidget {
                   ),
                 ],
               ),
-              Container(
-                // height: 0,
-                padding: EdgeInsets.all(12),
-                child: Column(
-                  spacing: 10,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Text(
-                      "DASHBOARD",
-                      style: AppTextStyle.descriptionStyle.copyWith(
-                        fontSize: 14,
-                        color: Colors.black54,
-                      ),
+            ),
+            Container(
+              // height: 0,
+              padding: EdgeInsets.all(12),
+              child: Column(
+                spacing: 10,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Text(
+                    "DASHBOARD",
+                    style: AppTextStyle.descriptionStyle.copyWith(
+                      fontSize: 14,
+                      color: Colors.black54,
                     ),
-                    ProfileStatistics(),
-                  ],
-                ),
+                  ),
+                  ProfileStatistics(),
+                ],
               ),
-              SizedBox(
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: SizedBox(
                 height: 410,
                 child: LatestAppointments(),
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

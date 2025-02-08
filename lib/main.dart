@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:quick_care/common/screens/home_screen/doctor_home_screen.dart';
+import 'package:quick_care/common/screens/home_screen/doctor_side_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,10 +14,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'QuickCare',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        useMaterial3: true,
-      ),
-      home: DoctorHomeScreen(),
+      theme:
+          ThemeData(useMaterial3: true, scaffoldBackgroundColor: Colors.white),
+      home: DoctorSideScreen(),
     );
   }
 }

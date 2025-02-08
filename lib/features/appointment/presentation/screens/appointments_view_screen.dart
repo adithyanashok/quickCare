@@ -3,7 +3,8 @@ import 'package:quick_care/features/my_bookings/presentation/widgets/app_bar.dar
 import 'package:quick_care/features/my_bookings/presentation/widgets/booking_card.dart';
 
 class AppointmentsViewScreen extends StatefulWidget {
-  const AppointmentsViewScreen({super.key});
+  final bool isDoc;
+  const AppointmentsViewScreen({super.key, this.isDoc = false});
 
   @override
   State<AppointmentsViewScreen> createState() => _AppointmentsViewScreenState();
@@ -39,21 +40,10 @@ class _AppointmentsViewScreenState extends State<AppointmentsViewScreen>
             padding: EdgeInsets.all(15),
             children: [
               BookingCard(
-                isDoc: true,
+                isDoc: widget.isDoc,
               ),
               BookingCard(
-                isDoc: true,
-              ),
-            ],
-          ),
-          ListView(
-            padding: EdgeInsets.all(15),
-            children: [
-              BookingCard(
-                isDoc: true,
-              ),
-              BookingCard(
-                isDoc: true,
+                isDoc: widget.isDoc,
               ),
             ],
           ),
@@ -61,16 +51,27 @@ class _AppointmentsViewScreenState extends State<AppointmentsViewScreen>
             padding: EdgeInsets.all(15),
             children: [
               BookingCard(
-                isDoc: true,
+                isDoc: widget.isDoc,
               ),
               BookingCard(
-                isDoc: true,
+                isDoc: widget.isDoc,
+              ),
+            ],
+          ),
+          ListView(
+            padding: EdgeInsets.all(15),
+            children: [
+              BookingCard(
+                isDoc: widget.isDoc,
               ),
               BookingCard(
-                isDoc: true,
+                isDoc: widget.isDoc,
               ),
               BookingCard(
-                isDoc: true,
+                isDoc: widget.isDoc,
+              ),
+              BookingCard(
+                isDoc: widget.isDoc,
               ),
             ],
           ),
