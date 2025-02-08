@@ -30,16 +30,17 @@ class SignupScreen extends StatelessWidget {
                   spacing: 14,
                   children: [
                     CustomTextField(
-                      name: "Your Name",
-                      icon: Icons.person_outline_rounded,
-                    ),
-                    CustomTextField(
                       name: "Your Email",
                       icon: Icons.mail_outline_outlined,
                     ),
                     CustomTextField(
                       name: "Password",
                       icon: Icons.lock_outlined,
+                    ),
+                    GenderDropdown(
+                      hintText: "Select role",
+                      onChanged: (value) {},
+                      items: ["Doctor", "Patient"],
                     ),
                     SizedBox(height: 1),
                     CustomRoundedButton(

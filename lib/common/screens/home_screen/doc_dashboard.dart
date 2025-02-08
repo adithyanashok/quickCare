@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:quick_care/common/styles/styles.dart';
 import 'package:quick_care/features/appointment/presentation/widgets/latest_appointments.dart';
-import 'package:quick_care/features/statistics/presentation/profile_statistics.dart';
+import 'package:quick_care/features/statistics/presentation/widgets/profile_statistics.dart';
 
 class DocDashboard extends StatelessWidget {
   const DocDashboard({super.key});

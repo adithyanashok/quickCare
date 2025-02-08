@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:quick_care/common/screens/home_screen/doctor_side_screen.dart';
+import 'package:quick_care/common/screens/splash_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme:
           ThemeData(useMaterial3: true, scaffoldBackgroundColor: Colors.white),
-      home: DoctorSideScreen(),
+      home: SplashScreen(),
     );
   }
 }

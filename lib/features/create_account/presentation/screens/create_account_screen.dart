@@ -68,11 +68,6 @@ class CreateAccountScreen extends StatelessWidget {
                     onChanged: (value) {},
                     items: ["Male", "Female", "Other"],
                   ),
-                  GenderDropdown(
-                    hintText: "Select role",
-                    onChanged: (value) {},
-                    items: ["Doctor", "Patient"],
-                  ),
                   SizedBox(height: 1),
                   CustomRoundedButton(onTap: () {}, name: "Create account"),
                 ],

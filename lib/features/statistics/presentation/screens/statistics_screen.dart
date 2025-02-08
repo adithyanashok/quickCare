@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:quick_care/common/styles/styles.dart';
-import 'package:quick_care/features/statistics/presentation/booking_overview.dart';
-import 'package:quick_care/features/statistics/presentation/patients_overview.dart';
-import 'package:quick_care/features/statistics/presentation/revanue_overview.dart';
+import 'package:quick_care/features/statistics/presentation/widgets/booking_overview.dart';
+import 'package:quick_care/features/statistics/presentation/widgets/patients_overview.dart';
+import 'package:quick_care/features/statistics/presentation/widgets/revanue_overview.dart';
 
 class StatisticsScreen extends StatelessWidget {
   const StatisticsScreen({super.key});

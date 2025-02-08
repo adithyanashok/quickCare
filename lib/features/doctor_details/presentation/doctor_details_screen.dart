@@ -9,7 +9,8 @@ import 'package:quick_care/features/doctor_details/presentation/widgets/expandab
 import 'package:quick_care/features/doctor_details/presentation/widgets/review_section.dart';
 
 class DoctorDetailsScreen extends StatelessWidget {
-  const DoctorDetailsScreen({super.key});
+  final bool isDoc;
+  const DoctorDetailsScreen({super.key, this.isDoc = true});
 
   @override
   Widget build(BuildContext context) {
@@ -21,10 +22,15 @@ class DoctorDetailsScreen extends StatelessWidget {
           style: AppTextStyle.titleStyle,
         ),
         actions: [
-          IconButton(
-            onPressed: () {},
-            icon: Icon(Icons.favorite_border_outlined),
-          )
+          isDoc == true
+              ? IconButton(
+                  onPressed: () {},
+                  icon: Icon(Icons.settings),
+                )
+              : IconButton(
+                  onPressed: () {},
+                  icon: Icon(Icons.favorite_border_outlined),
+                )
         ],
       ),
       body: Column(
@@ -89,14 +95,16 @@ class DoctorDetailsScreen extends StatelessWidget {
                     ],
                   ),
                 ),
-                ReviewSection(),
+                isDoc ? SizedBox() : ReviewSection(),
               ],
             ),
           ),
-          BottomButton(
-            name: "Book Appointment",
-            onTap: () {},
-          ),
+          isDoc
+              ? SizedBox()
+              : BottomButton(
+                  name: "Book Appointment",
+                  onTap: () {},
+                ),
         ],
       ),
     );
