@@ -8,6 +8,8 @@ class CreateAccountScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = TextEditingController();
+
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
@@ -52,14 +54,17 @@ class CreateAccountScreen extends StatelessWidget {
                 spacing: 14,
                 children: [
                   CustomTextField(
+                    controller: controller,
                     name: "Your Name",
                     icon: Icons.person_outline,
                   ),
                   CustomTextField(
+                    controller: controller,
                     name: "Date of birth",
                     icon: Icons.calendar_month,
                   ),
                   CustomTextField(
+                    controller: controller,
                     name: "Phone",
                     icon: Icons.phone,
                   ),
@@ -67,6 +72,11 @@ class CreateAccountScreen extends StatelessWidget {
                     hintText: "Gender",
                     onChanged: (value) {},
                     items: ["Male", "Female", "Other"],
+                  ),
+                  GenderDropdown(
+                    hintText: "Select role",
+                    onChanged: (value) {},
+                    items: ["Doctor", "Patient"],
                   ),
                   SizedBox(height: 1),
                   CustomRoundedButton(onTap: () {}, name: "Create account"),

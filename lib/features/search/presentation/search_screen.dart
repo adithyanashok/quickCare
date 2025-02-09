@@ -13,6 +13,7 @@ class SearchScreen extends StatefulWidget {
 }
 
 class _SearchScreenState extends State<SearchScreen> {
+  final controller = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,6 +28,7 @@ class _SearchScreenState extends State<SearchScreen> {
         padding: EdgeInsets.all(14),
         children: [
           CustomTextField(
+            controller: controller,
             name: "Search",
             icon: HugeIcons.strokeRoundedSearch01,
           ),

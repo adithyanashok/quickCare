@@ -4,17 +4,21 @@ import 'package:quick_care/core/colors.dart';
 class CustomTextField extends StatelessWidget {
   final String name;
   final IconData icon;
+  final TextEditingController controller;
   const CustomTextField({
     super.key,
     required this.name,
     required this.icon,
+    required this.controller,
   });
 
   @override
   Widget build(BuildContext context) {
     return TextField(
+      controller: controller,
       decoration: InputDecoration(
         // fillColor: Colors.grey,
+
         fillColor: AppColors.grey200,
         filled: true,
         border: OutlineInputBorder(
