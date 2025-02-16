@@ -19,27 +19,26 @@ class SigninScreen extends StatelessWidget {
     return Scaffold(
       body: BlocConsumer<AuthBlocBloc, AuthBlocState>(
         listener: (context, state) {
-          state.whenOrNull(
-            authenticated: (authmodel) {
-              Navigator.of(context).pushReplacement(
-                MaterialPageRoute(
-                  builder: (context) => BottomNav(),
-                ),
-              );
-            },
-            error: (error) => ScaffoldMessenger.of(context).showSnackBar(
-              SnackBar(content: Text(error)),
-            ),
-          );
+          if (state is Authenticated) {
+            Navigator.of(context).pushReplacement(
+              MaterialPageRoute(
+                builder: (context) => BottomNav(),
+              ),
+            );
+          } else if (state is Error) {
+            ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+              content: Text("Error: ${state.error}"),
+            ));
+          }
         },
         builder: (context, state) {
           return SafeArea(
-            child: (state is Loading)
-                ? Center(
-                    child: CircularProgressIndicator(),
-                  )
-                : SingleChildScrollView(
-                    child: Column(
+            child: SingleChildScrollView(
+              child: (state is Loading)
+                  ? Center(
+                      child: CircularProgressIndicator(),
+                    )
+                  : Column(
                       spacing: 20,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -66,9 +65,13 @@ class SigninScreen extends StatelessWidget {
                               SizedBox(height: 1),
                               CustomRoundedButton(
                                 onTap: () {
-                                  context.read<AuthBlocBloc>().add(
-                                      AuthBlocEvent.signin(emailController.text,
-                                          passwordController.text));
+                                  print("Initated at signin screen");
+                                  context
+                                      .read<AuthBlocBloc>()
+                                      .add(AuthBlocEvent.signin(
+                                        emailController.text,
+                                        passwordController.text,
+                                      ));
                                 },
                                 name: "Sign in",
                               )
@@ -108,7 +111,7 @@ class SigninScreen extends StatelessWidget {
                         )
                       ],
                     ),
-                  ),
+            ),
           );
         },
       ),
