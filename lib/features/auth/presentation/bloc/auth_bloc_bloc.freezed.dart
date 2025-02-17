@@ -18,21 +18,22 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$AuthBlocEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String email, String password) signup,
+    required TResult Function(String name, String email, String password)
+        signup,
     required TResult Function(String email, String password) signin,
     required TResult Function() signinout,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String email, String password)? signup,
+    TResult? Function(String name, String email, String password)? signup,
     TResult? Function(String email, String password)? signin,
     TResult? Function()? signinout,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String email, String password)? signup,
+    TResult Function(String name, String email, String password)? signup,
     TResult Function(String email, String password)? signin,
     TResult Function()? signinout,
     required TResult orElse(),
@@ -89,7 +90,7 @@ abstract class _$$SignupImplCopyWith<$Res> {
           _$SignupImpl value, $Res Function(_$SignupImpl) then) =
       __$$SignupImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({String email, String password});
+  $Res call({String name, String email, String password});
 }
 
 /// @nodoc
@@ -105,10 +106,15 @@ class __$$SignupImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? name = null,
     Object? email = null,
     Object? password = null,
   }) {
     return _then(_$SignupImpl(
+      null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
       null == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
@@ -124,8 +130,10 @@ class __$$SignupImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$SignupImpl implements _Signup {
-  const _$SignupImpl(this.email, this.password);
+  const _$SignupImpl(this.name, this.email, this.password);
 
+  @override
+  final String name;
   @override
   final String email;
   @override
@@ -133,7 +141,7 @@ class _$SignupImpl implements _Signup {
 
   @override
   String toString() {
-    return 'AuthBlocEvent.signup(email: $email, password: $password)';
+    return 'AuthBlocEvent.signup(name: $name, email: $email, password: $password)';
   }
 
   @override
@@ -141,13 +149,14 @@ class _$SignupImpl implements _Signup {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SignupImpl &&
+            (identical(other.name, name) || other.name == name) &&
             (identical(other.email, email) || other.email == email) &&
             (identical(other.password, password) ||
                 other.password == password));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, email, password);
+  int get hashCode => Object.hash(runtimeType, name, email, password);
 
   /// Create a copy of AuthBlocEvent
   /// with the given fields replaced by the non-null parameter values.
@@ -160,33 +169,34 @@ class _$SignupImpl implements _Signup {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String email, String password) signup,
+    required TResult Function(String name, String email, String password)
+        signup,
     required TResult Function(String email, String password) signin,
     required TResult Function() signinout,
   }) {
-    return signup(email, password);
+    return signup(name, email, password);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String email, String password)? signup,
+    TResult? Function(String name, String email, String password)? signup,
     TResult? Function(String email, String password)? signin,
     TResult? Function()? signinout,
   }) {
-    return signup?.call(email, password);
+    return signup?.call(name, email, password);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String email, String password)? signup,
+    TResult Function(String name, String email, String password)? signup,
     TResult Function(String email, String password)? signin,
     TResult Function()? signinout,
     required TResult orElse(),
   }) {
     if (signup != null) {
-      return signup(email, password);
+      return signup(name, email, password);
     }
     return orElse();
   }
@@ -227,9 +237,11 @@ class _$SignupImpl implements _Signup {
 }
 
 abstract class _Signup implements AuthBlocEvent {
-  const factory _Signup(final String email, final String password) =
+  const factory _Signup(
+          final String name, final String email, final String password) =
       _$SignupImpl;
 
+  String get name;
   String get email;
   String get password;
 
@@ -317,7 +329,8 @@ class _$SigninImpl implements _Signin {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String email, String password) signup,
+    required TResult Function(String name, String email, String password)
+        signup,
     required TResult Function(String email, String password) signin,
     required TResult Function() signinout,
   }) {
@@ -327,7 +340,7 @@ class _$SigninImpl implements _Signin {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String email, String password)? signup,
+    TResult? Function(String name, String email, String password)? signup,
     TResult? Function(String email, String password)? signin,
     TResult? Function()? signinout,
   }) {
@@ -337,7 +350,7 @@ class _$SigninImpl implements _Signin {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String email, String password)? signup,
+    TResult Function(String name, String email, String password)? signup,
     TResult Function(String email, String password)? signin,
     TResult Function()? signinout,
     required TResult orElse(),
@@ -438,7 +451,8 @@ class _$SignoutImpl implements _Signout {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String email, String password) signup,
+    required TResult Function(String name, String email, String password)
+        signup,
     required TResult Function(String email, String password) signin,
     required TResult Function() signinout,
   }) {
@@ -448,7 +462,7 @@ class _$SignoutImpl implements _Signout {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String email, String password)? signup,
+    TResult? Function(String name, String email, String password)? signup,
     TResult? Function(String email, String password)? signin,
     TResult? Function()? signinout,
   }) {
@@ -458,7 +472,7 @@ class _$SignoutImpl implements _Signout {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String email, String password)? signup,
+    TResult Function(String name, String email, String password)? signup,
     TResult Function(String email, String password)? signin,
     TResult Function()? signinout,
     required TResult orElse(),

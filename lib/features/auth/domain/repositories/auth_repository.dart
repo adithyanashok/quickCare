@@ -5,6 +5,7 @@ import 'package:quick_care/features/auth/data/model/auth_model.dart';
 abstract class AuthRepository {
   // Signup
   Future<Either<Failure, AuthModel>> signUp({
+    required String name,
     required String email,
     required String password,
   });

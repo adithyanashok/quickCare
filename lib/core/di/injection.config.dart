@@ -19,6 +19,8 @@ import 'package:quick_care/features/auth/domain/repositories/auth_repository.dar
     as _i547;
 import 'package:quick_care/features/auth/domain/usecases/user_login.dart'
     as _i622;
+import 'package:quick_care/features/auth/domain/usecases/user_signup.dart'
+    as _i919;
 import 'package:quick_care/features/auth/presentation/bloc/auth_bloc_bloc.dart'
     as _i1067;
 
@@ -39,8 +41,12 @@ extension GetItInjectableX on _i174.GetIt {
         () => _i828.AuthRepositoryImp(gh<_i630.AuthRemoteDataSource>()));
     gh.lazySingleton<_i622.UserLogin>(
         () => _i622.UserLogin(gh<_i547.AuthRepository>()));
-    gh.factory<_i1067.AuthBlocBloc>(
-        () => _i1067.AuthBlocBloc(gh<_i622.UserLogin>()));
+    gh.lazySingleton<_i919.UserSignup>(
+        () => _i919.UserSignup(gh<_i547.AuthRepository>()));
+    gh.factory<_i1067.AuthBlocBloc>(() => _i1067.AuthBlocBloc(
+          gh<_i622.UserLogin>(),
+          gh<_i919.UserSignup>(),
+        ));
     return this;
   }
 }

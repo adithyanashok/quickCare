@@ -36,9 +36,19 @@ class AuthRepositoryImp extends AuthRepository {
   }
 
   @override
-  Future<Either<Failure, AuthModel>> signUp(
-      {required String email, required String password}) {
-    // TODO: implement signUp
-    throw UnimplementedError();
+  Future<Either<Failure, AuthModel>> signUp({
+    required String name,
+    required String email,
+    required String password,
+  }) async {
+    print("Now at AuthRepositoryImp");
+    try {
+      final user = await remoteDataSource.signUp(name, email, password);
+      return Right(user);
+    } on FirebaseAuthException catch (e) {
+      return Left(FirebaseErrorMapper.fromFirebaseAuthException(e));
+    } catch (e) {
+      return Left(Failure(e.toString()));
+    }
   }
 }

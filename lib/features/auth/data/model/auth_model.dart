@@ -7,7 +7,7 @@ class AuthModel with _$AuthModel {
   const factory AuthModel({
     required String id,
     required String email,
-    required String password,
+    required String name,
   }) = _AuthModel;
 
   factory AuthModel.fromJson(Map<String, dynamic> json) =>

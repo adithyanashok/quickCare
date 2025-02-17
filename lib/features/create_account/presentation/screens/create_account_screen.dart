@@ -55,11 +55,6 @@ class CreateAccountScreen extends StatelessWidget {
                 children: [
                   CustomTextField(
                     controller: controller,
-                    name: "Your Name",
-                    icon: Icons.person_outline,
-                  ),
-                  CustomTextField(
-                    controller: controller,
                     name: "Date of birth",
                     icon: Icons.calendar_month,
                   ),
